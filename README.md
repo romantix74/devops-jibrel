@@ -19,7 +19,7 @@ How it should look: [Running Demo][demo].
 
 ![Preview](static/preview.png)
 
-All files you need - are in this GitHub repository. Just [clone][github-clone] it or open [on GitHub][github-repository] directly.
+All files you need - are in this GitHub repository. Just clone it (`git@github.com:soar/devops-test.git`) or open [on GitHub][github-repository] directly.
 
 This app is written on Python and is pretty simple. 
 Why Python? In my own opinion, this is preferred language which any Linux engineer should know. 
