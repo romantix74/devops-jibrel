@@ -1,0 +1,34 @@
+version: '3'
+services:
+  db:
+    container_name: devops_db
+    image: postgres
+    restart: always
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: userdb
+      POSTGRES_PASSWORD: pass20190221
+      POSTGRES_DB: devops
+  web:
+    container_name: devops_test
+    build: .
+    #image: dev-test
+    command: bash \run.sh
+#python3 app.py
+    #restart: always 
+    volumes:
+      - .:/code
+    ports:
+      - "80:5000"
+    environment:
+      DATABASE_URL: postgresql://userdb:pass20190221@db/userdb
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+
